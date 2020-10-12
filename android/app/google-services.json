@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "372715753823",
+    "firebase_url": "https://smartc-box-bc320.firebaseio.com",
+    "project_id": "smartc-box-bc320",
+    "storage_bucket": "smartc-box-bc320.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:372715753823:android:14f35edbeddcdfa18b26ea",
+        "android_client_info": {
+          "package_name": "com.smartcbox.final_flutter_smartc"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "372715753823-eq72d3hq4phac9vf48je7tqs9ch0ud2n.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDblo4NbCXKLkkMkD8CDx8tGY-_cPh5w-E"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "372715753823-eq72d3hq4phac9vf48je7tqs9ch0ud2n.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
