@@ -15,11 +15,21 @@ dependencies:
   google_fonts: ^1.0.0
   email_validator: ^1.0.6
   #firebase_auth: 0.16.1
-  cloud_firestore: ^0.14.1
-  firebase_core: ^0.5.0
+  #cloud_firestore: ^0.13.1
+  #firebase_core: ^0.5.0
   firebase_auth: ^0.18.0+1
   google_sign_in: ^4.5.3
   settings_ui: ^0.3.0
+
+  country_code_picker: ^1.5.0
+  flutter_auth_buttons: ^0.10.0
+  country_list_pick: ^1.0.0+3
+  sms_autofill: ^1.2.0
+  loading: ^1.0.2
+  flutter_pin_code_fields:
+  overlay_screen: ^1.2.0+1
+
+
 
 dev_dependencies:
   flutter_test:
@@ -33,6 +43,8 @@ flutter:
   assets:
      - lottiefile.json
      - assets/
+     #- assets/holding-phone.png
+     #- assets/Complain-512.png
 
   # fonts:
   #   - family: Schyler

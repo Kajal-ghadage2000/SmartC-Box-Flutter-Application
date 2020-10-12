@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:lottie/lottie.dart';
 import 'dart:async';
-//import 'Settings.dart';
+import 'Phone_google_auth/LoginHome.dart';
 
 class MySplash extends StatefulWidget {
   @override
@@ -14,11 +14,11 @@ class _MySplashState extends State<MySplash> {
   @override
   Widget build(BuildContext context) {
 
-    /*Timer(
+    Timer(
         Duration(seconds: 5),
             () =>
             Navigator.of(context).pushReplacement(MaterialPageRoute(
-                builder: (BuildContext context) => Settings())));*/
+                builder: (BuildContext context) => LoginHome())));
 
     return Scaffold(
       body: Stack(
