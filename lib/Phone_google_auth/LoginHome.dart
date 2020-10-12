@@ -19,18 +19,15 @@ class _LoginHomeState extends State<LoginHome> {
       body: Center(
         child: SingleChildScrollView(
           child: Padding(
-            padding: const EdgeInsets.all(20),
+            padding: const EdgeInsets.only(left: 20, right: 20, bottom:20),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                SizedBox(
-                  height: 15,
-                ),
                 Image.asset(
                   'assets/Complain-512.png',
-                  height: 200,
-                  width: 200,
+                  height: 250,
+                  width: 250,
                 ),
                 SizedBox(
                   height: 25,
@@ -125,22 +122,57 @@ class _LoginHomeState extends State<LoginHome> {
                 SizedBox(
                   height: 15,
                 ),
-
-                GoogleSignInButton(
-                  borderRadius: 7,
-                  text: "Continue with Goggle",
-                  textStyle: TextStyle(
-                      color: Colors.grey[95],
-                      fontSize: 15,
-                      letterSpacing: 1.5,
-                      fontWeight: FontWeight.w500,
-                      fontFamily: "Roboto"),
-                  onPressed: () {/* ... */},
-                ),
+                _signInButton(),
 
               ],
             ),
           ),
+        ),
+      ),
+    );
+  }
+
+
+
+
+
+  Widget _signInButton() {
+    return OutlineButton(
+      splashColor: Colors.grey,
+      onPressed: () {
+        /*signInWithGoogle().then((result) {
+          if (result != null) {
+            Navigator.of(context).push(
+              MaterialPageRoute(
+                builder: (context) {
+                  return FirstScreen();
+                },
+              ),
+            );
+          }
+        });*/
+      },
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(40)),
+      highlightElevation: 0,
+      borderSide: BorderSide(color: Colors.grey),
+      child: Padding(
+        padding: const EdgeInsets.fromLTRB(0, 10, 0, 10),
+        child: Row(
+          mainAxisSize: MainAxisSize.min,
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            Image(image: AssetImage("assets/google_logo.png"), height: 35.0),
+            Padding(
+              padding: const EdgeInsets.only(left: 10),
+              child: Text(
+                'Sign in with Google',
+                style: TextStyle(
+                  fontSize: 20,
+                  color: Colors.grey,
+                ),
+              ),
+            )
+          ],
         ),
       ),
     );
