@@ -33,14 +33,14 @@ class _LoginHomeState extends State<LoginHome> {
                   height: 25,
                 ),
                 Container(
-                  height: 40,
+                  height: 60,
                   decoration: BoxDecoration(
                       color: Colors.white,
                       border: Border.all(color: Colors.white),
-                      borderRadius: BorderRadius.circular(7)),
+                      borderRadius: BorderRadius.circular(15)),
                   child: Row(
                     children: <Widget>[
-                      Expanded(
+                      Expanded(child: Center(
                         child: CountryListPick(
                             theme: CountryTheme(
                                 isShowFlag: true,
@@ -56,7 +56,7 @@ class _LoginHomeState extends State<LoginHome> {
                               print(code.code);
                               print(code.dialCode);
                               print(code.flagUri);
-                            }),
+                            }),),
                       ),
                       Expanded(
                         child: TextField(
@@ -69,7 +69,7 @@ class _LoginHomeState extends State<LoginHome> {
                                 TextStyle(fontSize: 14, letterSpacing: 2),
                           ),
                           onChanged: (value) {
-// this.phoneNo=value;
+                            // this.phoneNo=value;
                             print(value);
                           },
                           controller: _phoneController,
@@ -79,11 +79,11 @@ class _LoginHomeState extends State<LoginHome> {
                   ),
                 ),
                 SizedBox(
-                  height: 15,
+                  height: 25,
                 ),
                 MaterialButton(
                   minWidth: double.maxFinite,
-                  height: 40,
+                  height: 60,
                   child: Text(
                     "Send OTP",
                     style: TextStyle(letterSpacing: 1.5),
@@ -100,13 +100,13 @@ class _LoginHomeState extends State<LoginHome> {
                             builder: (context) => VerifyPhone(mobile)));
                   },
                 ),
-                SizedBox(height: 25),
+                SizedBox(height: 50),
                 Row(children: <Widget>[
                   Expanded(child: Divider(color: Colors.grey[350])),
                   Text(
                     " OR ",
                     style: TextStyle(
-                      fontSize: 15,
+                      fontSize: 16,
                       color: Colors.white,
                       fontWeight: FontWeight.w100,
                     ),
@@ -117,10 +117,7 @@ class _LoginHomeState extends State<LoginHome> {
                   )),
                 ]),
                 SizedBox(
-                  height: 10,
-                ),
-                SizedBox(
-                  height: 15,
+                  height: 50,
                 ),
                 _signInButton(),
 
@@ -137,7 +134,12 @@ class _LoginHomeState extends State<LoginHome> {
 
 
   Widget _signInButton() {
-    return OutlineButton(
+    return Container(
+      height: 60,
+      decoration: BoxDecoration(
+          color: Colors.white,
+          borderRadius: BorderRadius.circular(20)),
+      child: OutlineButton(
       splashColor: Colors.grey,
       onPressed: () {
         /*signInWithGoogle().then((result) {
@@ -152,7 +154,7 @@ class _LoginHomeState extends State<LoginHome> {
           }
         });*/
       },
-      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(40)),
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
       highlightElevation: 0,
       borderSide: BorderSide(color: Colors.grey),
       child: Padding(
@@ -168,13 +170,13 @@ class _LoginHomeState extends State<LoginHome> {
                 'Sign in with Google',
                 style: TextStyle(
                   fontSize: 20,
-                  color: Colors.grey,
+                  color: Colors.grey[700],
                 ),
               ),
             )
           ],
         ),
       ),
-    );
+    ),);
   }
 }
