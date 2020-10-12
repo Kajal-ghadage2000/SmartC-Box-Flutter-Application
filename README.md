@@ -1,6 +1,6 @@
 # final_flutter_smartc
 
-A new Flutter application.
+    Flutter Application to register and track complaint.
 
 ## Getting Started
 
