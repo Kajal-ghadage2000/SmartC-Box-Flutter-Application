@@ -6,7 +6,7 @@ import 'VerifyPhone.dart';
 import 'package:toast/toast.dart';
 //import 'first_screen.dart';
 import 'sign_in.dart';
-import '../Settings.dart';
+import '../HomeScreen.dart';
 
 class LoginHome extends StatefulWidget {
   @override
@@ -162,7 +162,7 @@ class _LoginHomeState extends State<LoginHome> {
             Navigator.of(context).push(
               MaterialPageRoute(
                 builder: (context) {
-                  return Settings();
+                  return HomeScreen();
                 },
               ),
             );
