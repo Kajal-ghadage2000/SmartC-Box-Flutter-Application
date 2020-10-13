@@ -25,10 +25,10 @@ class _LoginHomeState extends State<LoginHome> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Image.asset(
-                  'assets/Complain-512.png',
-                  height: 250,
-                  width: 250,
-                ),
+                    'assets/Complain-512.png',
+                    height: 250,
+                    width: 250,
+                  ),
                 SizedBox(
                   height: 25,
                 ),
@@ -37,7 +37,7 @@ class _LoginHomeState extends State<LoginHome> {
                   decoration: BoxDecoration(
                       color: Colors.white,
                       border: Border.all(color: Colors.white),
-                      borderRadius: BorderRadius.circular(15)),
+                      borderRadius: BorderRadius.circular(20)),
                   child: Row(
                     children: <Widget>[
                       Expanded(child: Center(
@@ -66,7 +66,7 @@ class _LoginHomeState extends State<LoginHome> {
                             border: InputBorder.none,
                             hintText: "Phone Number",
                             hintStyle:
-                                TextStyle(fontSize: 14, letterSpacing: 2),
+                                TextStyle(fontSize: 16, letterSpacing: 2),
                           ),
                           onChanged: (value) {
                             // this.phoneNo=value;
@@ -86,12 +86,15 @@ class _LoginHomeState extends State<LoginHome> {
                   height: 60,
                   child: Text(
                     "Send OTP",
-                    style: TextStyle(letterSpacing: 1.5),
+                    style: TextStyle(
+                      fontSize: 18,
+                        letterSpacing: 1.5
+                    ),
                   ),
                   textColor: Colors.white,
                   color: Colors.black,
                   shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(7)),
+                      borderRadius: BorderRadius.circular(20)),
                   onPressed: () {
                     final mobile = "+91" + _phoneController.text.trim();
                     Navigator.push(
@@ -138,7 +141,7 @@ class _LoginHomeState extends State<LoginHome> {
       height: 60,
       decoration: BoxDecoration(
           color: Colors.white,
-          borderRadius: BorderRadius.circular(20)),
+          borderRadius: BorderRadius.circular(30)),
       child: OutlineButton(
       splashColor: Colors.grey,
       onPressed: () {
@@ -154,7 +157,7 @@ class _LoginHomeState extends State<LoginHome> {
           }
         });*/
       },
-      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30)),
       highlightElevation: 0,
       borderSide: BorderSide(color: Colors.grey),
       child: Padding(
