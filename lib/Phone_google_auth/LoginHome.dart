@@ -4,8 +4,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_auth_buttons/flutter_auth_buttons.dart';
 import 'VerifyPhone.dart';
 import 'package:toast/toast.dart';
-import 'first_screen.dart';
+//import 'first_screen.dart';
 import 'sign_in.dart';
+import '../Settings.dart';
 
 class LoginHome extends StatefulWidget {
   @override
@@ -161,7 +162,7 @@ class _LoginHomeState extends State<LoginHome> {
             Navigator.of(context).push(
               MaterialPageRoute(
                 builder: (context) {
-                  return FirstScreen();
+                  return Settings();
                 },
               ),
             );
