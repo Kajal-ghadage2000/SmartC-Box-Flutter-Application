@@ -4,6 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_auth_buttons/flutter_auth_buttons.dart';
 import 'VerifyPhone.dart';
 import 'package:toast/toast.dart';
+import 'first_screen.dart';
+import 'sign_in.dart';
 
 class LoginHome extends StatefulWidget {
   @override
@@ -154,7 +156,7 @@ class _LoginHomeState extends State<LoginHome> {
       child: OutlineButton(
       splashColor: Colors.grey,
       onPressed: () {
-        /*signInWithGoogle().then((result) {
+        signInWithGoogle().then((result) {
           if (result != null) {
             Navigator.of(context).push(
               MaterialPageRoute(
@@ -164,7 +166,7 @@ class _LoginHomeState extends State<LoginHome> {
               ),
             );
           }
-        });*/
+        });
       },
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30)),
       highlightElevation: 0,
