@@ -49,8 +49,9 @@ class _SettingsState extends State<Settings> {
                               Text(name, style: TextStyle(
                                   color: Colors.white,
                                   fontSize: 25,
-                                  fontWeight: FontWeight.bold
+                                  fontWeight: FontWeight.bold,
                               ),
+                                maxLines: 2,
                               ),
                               SizedBox(height: 10,),
                               Row(
@@ -66,11 +67,14 @@ class _SettingsState extends State<Settings> {
                                       Text(email, style: TextStyle(
                                         color: Colors.white60,
                                         fontSize: 17,
-                                      ),),
+                                      ),
+                                        maxLines: 2,
+                                      ),
                                     ],
                                   ),
                                 ],
-                              )
+                              ),
+                              SizedBox(height: 10,),
                             ],
                           )
                         ],
