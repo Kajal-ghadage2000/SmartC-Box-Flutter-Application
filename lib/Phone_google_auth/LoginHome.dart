@@ -169,9 +169,9 @@ class _LoginHomeState extends State<LoginHome> {
           }
         });
       },
-      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30)),
-      highlightElevation: 0,
-      borderSide: BorderSide(color: Colors.grey),
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30)),
+        highlightElevation: 0,
+        borderSide: BorderSide(color: Colors.grey),
       child: Padding(
         padding: const EdgeInsets.fromLTRB(0, 10, 0, 10),
         child: Row(

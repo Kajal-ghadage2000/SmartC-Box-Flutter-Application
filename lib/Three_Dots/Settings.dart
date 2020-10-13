@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:settings_ui/settings_ui.dart';
-import 'Phone_google_auth/sign_in.dart';
+import '../Phone_google_auth/sign_in.dart';
 
 
 class Settings extends StatefulWidget {
@@ -12,14 +12,19 @@ class _SettingsState extends State<Settings> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: Color(0xffF8F8FA),
+      extendBodyBehindAppBar: true,
+        appBar: AppBar(
+          elevation: 0.0,
+          backgroundColor: Colors.transparent,
+        ),
+      backgroundColor: Colors.teal[700],
       body: Stack(
         children: <Widget>[
           Container(
                 color: Colors.teal[700],
-                height: 200,
+                height: 230,
                 child: Padding(
-                  padding:  EdgeInsets.only(left: 15.0, right: 15.0, top: 80),
+                  padding:  EdgeInsets.only(left: 15.0, right: 15.0, top: 100),
                   child: Column(
                     children: <Widget>[
                       Row(
@@ -84,8 +89,9 @@ class _SettingsState extends State<Settings> {
 
           Container(
             //_getDrawerItemWidget(_selectedDrawerIndex),
-            padding: new EdgeInsets.only(top: 202),
-            child: SettingsList(
+            child: Padding(
+              padding:  EdgeInsets.only(top: 230),
+              child: SettingsList(
               sections: [
                 SettingsSection(
                   title: 'Account',
@@ -123,7 +129,7 @@ class _SettingsState extends State<Settings> {
                 ),
               ],
             ),
-          ),
+          ),),
         ],
       ),
     );

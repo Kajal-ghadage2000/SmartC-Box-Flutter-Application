@@ -5,6 +5,8 @@ import 'package:flutter_gifimage/flutter_gifimage.dart';
 import 'Tabs/Home.dart';
 import 'Tabs/History.dart';
 
+import 'Three_Dots/Settings.dart';
+
 class HomeScreen extends StatefulWidget {
   @override
   _HomeScreenState createState() => _HomeScreenState();
@@ -32,8 +34,9 @@ class _HomeScreenState extends State<HomeScreen> with SingleTickerProviderStateM
             appBar: AppBar(
               actions: <Widget>[
                 PopupMenuButton<String>(
+                  onSelected: handleClick,
                   itemBuilder: (BuildContext context) {
-                    return {'Settings', 'help', 'Logout'}.map((String choice) {
+                    return {'Settings', 'Help', 'Logout'}.map((String choice) {
                       return PopupMenuItem<String>(
                         value: choice,
                         child: Text(choice),
@@ -65,4 +68,21 @@ class _HomeScreenState extends State<HomeScreen> with SingleTickerProviderStateM
           ),
         ));
   }
+
+  void handleClick(String choice){
+    if(choice == 'Settings'){
+      print('Settings');
+      Navigator.push(
+        context,
+        MaterialPageRoute(builder: (context) => Settings()),
+      );
+    }
+    else if(choice == 'Help'){
+      print('Subscribe');
+    }
+    else if(choice == 'LogOut'){
+      print('SignOut');
+    }
+  }
+
 }
