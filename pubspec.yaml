@@ -35,6 +35,8 @@ dependencies:
 
   minimal_onboarding: ^1.0.0
 
+  flutter_launcher_icons: ^0.7.2
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
@@ -50,6 +52,10 @@ flutter:
      #- assets/holding-phone.png
      #- assets/Complain-512.png
 
+flutter_icons:
+  image_path: "assets/app_logo.png"
+  android: true
+  ios: true
   # fonts:
   #   - family: Schyler
   #     fonts:

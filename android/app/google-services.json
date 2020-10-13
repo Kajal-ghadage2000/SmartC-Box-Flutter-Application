@@ -15,6 +15,162 @@
       },
       "oauth_client": [
         {
+          "client_id": "372715753823-lq750l2j019boufpupfh22cv8a71stgu.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.smartcbox.final_flutter_smartc",
+            "certificate_hash": "46803db8e82ecf43c8c2ec81debe872e29b86ccd"
+          }
+        },
+        {
+          "client_id": "372715753823-eq72d3hq4phac9vf48je7tqs9ch0ud2n.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDblo4NbCXKLkkMkD8CDx8tGY-_cPh5w-E"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "372715753823-eq72d3hq4phac9vf48je7tqs9ch0ud2n.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:372715753823:android:77815f1d9037c9a88b26ea",
+        "android_client_info": {
+          "package_name": "com.smartcbox.phoneverification"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "372715753823-frsf7c7344rd0mjr6l65j9jg7kglog0g.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.smartcbox.phoneverification",
+            "certificate_hash": "2ac7740ddcaafe95d45e93d36bb6af115cec3d6e"
+          }
+        },
+        {
+          "client_id": "372715753823-eq72d3hq4phac9vf48je7tqs9ch0ud2n.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDblo4NbCXKLkkMkD8CDx8tGY-_cPh5w-E"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "372715753823-eq72d3hq4phac9vf48je7tqs9ch0ud2n.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:372715753823:android:96cbedca506bcb4b8b26ea",
+        "android_client_info": {
+          "package_name": "com.smartcbox.smart_c_box"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "372715753823-ts2daf4h3u7shqu7kgjihse632s0j867.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.smartcbox.smart_c_box",
+            "certificate_hash": "46803db8e82ecf43c8c2ec81debe872e29b86ccd"
+          }
+        },
+        {
+          "client_id": "372715753823-eq72d3hq4phac9vf48je7tqs9ch0ud2n.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDblo4NbCXKLkkMkD8CDx8tGY-_cPh5w-E"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "372715753823-eq72d3hq4phac9vf48je7tqs9ch0ud2n.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:372715753823:android:87731db98a05590c8b26ea",
+        "android_client_info": {
+          "package_name": "com.smartcbox.smartcbox2020"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "372715753823-iiq5r8eic98i3mmtu83k1hb12rpcrvfp.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.smartcbox.smartcbox2020",
+            "certificate_hash": "46803db8e82ecf43c8c2ec81debe872e29b86ccd"
+          }
+        },
+        {
+          "client_id": "372715753823-eq72d3hq4phac9vf48je7tqs9ch0ud2n.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDblo4NbCXKLkkMkD8CDx8tGY-_cPh5w-E"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "372715753823-eq72d3hq4phac9vf48je7tqs9ch0ud2n.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:372715753823:android:58f6dada4247ed128b26ea",
+        "android_client_info": {
+          "package_name": "com.smartcbox.verificationapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "372715753823-7tqtjk35t0d8ek4f8v2f7f8iqgtp1107.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.smartcbox.verificationapp",
+            "certificate_hash": "2ac7740ddcaafe95d45e93d36bb6af115cec3d6e"
+          }
+        },
+        {
           "client_id": "372715753823-eq72d3hq4phac9vf48je7tqs9ch0ud2n.apps.googleusercontent.com",
           "client_type": 3
         }

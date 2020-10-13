@@ -21,6 +21,10 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> with SingleTickerProviderStateMixin {
   TabController _tabController;
   GifController controller;
+
+  //Icon Settings = Icons.settings;
+  //Icon Help = Icons.settings;
+
   @override
   void initState() {
     _tabController = TabController(length: 2, vsync: this);
@@ -31,13 +35,14 @@ class _HomeScreenState extends State<HomeScreen> with SingleTickerProviderStateM
     return DefaultTabController(
         length: 2,
         child: Scaffold(
-            floatingActionButton: FloatingActionButton(
+            floatingActionButton: InkWell(
+              child:Container(
                 child: Image.asset(
                   "assets/chatbot.gif",
                   height: 130,
                   width: 130,
-                ),
-                onPressed: () {
+                ),),
+              onTap: () {
                   Navigator.of(context).push(new MaterialPageRoute(
                     builder: (BuildContext context) {
                       return new ChatBot();
@@ -46,14 +51,20 @@ class _HomeScreenState extends State<HomeScreen> with SingleTickerProviderStateM
                 },
             ),
             appBar: AppBar(
+              //leading: Image.asset('assets/app_logo.png'),
               actions: <Widget>[
                 PopupMenuButton<String>(
                   onSelected: handleClick,
                   itemBuilder: (BuildContext context) {
-                    return {'Settings', 'Help', 'Logout'}.map((String choice) {
+                    return {' Settings', ' Help'}.map((String choice) {
                       return PopupMenuItem<String>(
                         value: choice,
-                        child: Text(choice),
+                        child: Row(
+                          children: <Widget>[
+                            Icon(Icons.arrow_forward_ios, size: 24, color: Colors.lightBlue,),
+                            Text(choice),
+                          ],
+                        ),
                       );
                     }).toList();
                   },
@@ -84,29 +95,25 @@ class _HomeScreenState extends State<HomeScreen> with SingleTickerProviderStateM
   }
 
   void handleClick(String choice){
-    if(choice == 'Settings'){
+    if(choice == ' Settings'){
       print('Settings');
       Navigator.push(
         context,
         MaterialPageRoute(builder: (context) => Settings()),
       );
     }
-    else if(choice == 'Help'){
+    else if(choice == ' Help'){
       print('Subscribe');
       Navigator.push(
         context,
         MaterialPageRoute(builder: (context) => Help()),
       );
     }
-    else if(choice == 'LogOut'){
+    /*else if(choice == 'LogOut'){
       print('SignOut');
-      signOutGoogle();
-      Navigator
-          .of(context)
-          .pushReplacement(new MaterialPageRoute(builder: (BuildContext context) {
-        return new LoginHome();
-      }));
-    }
+      //signOutGoogle();
+      Navigator.pushReplacement(context, MaterialPageRoute(builder: (BuildContext context) => LoginHome()));
+    }*/
   }
 
 }
