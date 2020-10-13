@@ -33,6 +33,7 @@ dependencies:
 
   flutter_gifimage: ^1.0.1
 
+  minimal_onboarding: ^1.0.0
 
 dev_dependencies:
   flutter_test:
