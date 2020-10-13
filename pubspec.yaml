@@ -29,6 +29,8 @@ dependencies:
   flutter_pin_code_fields:
   overlay_screen: ^1.2.0+1
 
+  toast: ^0.1.5
+
 
 
 dev_dependencies:

@@ -3,6 +3,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_auth_buttons/flutter_auth_buttons.dart';
 import 'VerifyPhone.dart';
+import 'package:toast/toast.dart';
 
 class LoginHome extends StatefulWidget {
   @override
@@ -12,9 +13,11 @@ class LoginHome extends StatefulWidget {
 class _LoginHomeState extends State<LoginHome> {
   final _phoneController = TextEditingController();
   String phone_code;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       backgroundColor: Colors.teal[700],
       body: Center(
         child: SingleChildScrollView(
@@ -61,7 +64,7 @@ class _LoginHomeState extends State<LoginHome> {
                       Expanded(
                         child: TextField(
                           textAlign: TextAlign.start,
-                          keyboardType: TextInputType.phone,
+                          keyboardType: TextInputType.number,
                           decoration: InputDecoration(
                             border: InputBorder.none,
                             hintText: "Phone Number",
@@ -97,10 +100,16 @@ class _LoginHomeState extends State<LoginHome> {
                       borderRadius: BorderRadius.circular(20)),
                   onPressed: () {
                     final mobile = "+91" + _phoneController.text.trim();
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => VerifyPhone(mobile)));
+                    if(mobile.length == 13){
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => VerifyPhone(mobile)));
+                    }
+                    else{
+                      Toast.show("Phone number should be 10 digit", context, duration: Toast.LENGTH_SHORT, gravity:  Toast.TOP);
+                    }
+
                   },
                 ),
                 SizedBox(height: 50),
