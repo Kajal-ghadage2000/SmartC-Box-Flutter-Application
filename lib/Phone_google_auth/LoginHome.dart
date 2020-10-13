@@ -159,13 +159,11 @@ class _LoginHomeState extends State<LoginHome> {
       onPressed: () {
         signInWithGoogle().then((result) {
           if (result != null) {
-            Navigator.of(context).push(
-              MaterialPageRoute(
-                builder: (context) {
-                  return HomeScreen();
-                },
-              ),
-            );
+            Navigator
+                .of(context)
+                .pushReplacement(new MaterialPageRoute(builder: (BuildContext context) {
+              return new HomeScreen();
+            }));
           }
         });
       },
