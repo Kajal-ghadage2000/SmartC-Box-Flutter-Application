@@ -59,7 +59,7 @@ class _HomeScreenState extends State<HomeScreen> with SingleTickerProviderStateM
           body: TabBarView(
             children: [
               Home(),
-              Home(),
+              History(),
             ],
           ),
         ));
