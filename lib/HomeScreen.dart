@@ -2,6 +2,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_gifimage/flutter_gifimage.dart';
 
+import 'Tabs/Home.dart';
+
 class HomeScreen extends StatefulWidget {
   @override
   _HomeScreenState createState() => _HomeScreenState();
@@ -41,7 +43,9 @@ class _HomeScreenState extends State<HomeScreen> with SingleTickerProviderStateM
               ],
               backgroundColor: Colors.teal[700],
               title: Text("SmartC Box"),
-              bottom: TabBar(tabs: <Widget>[
+              bottom: TabBar(
+                  //isScrollable: true,
+                  tabs: <Widget>[
                 Tab(
                   icon: Icon(Icons.home),
                   text: 'Home',
@@ -51,6 +55,13 @@ class _HomeScreenState extends State<HomeScreen> with SingleTickerProviderStateM
                   text: 'History',
                 )
               ]),
-            )));
+            ),
+          body: TabBarView(
+            children: [
+              Home(),
+              Home(),
+            ],
+          ),
+        ));
   }
 }
