@@ -44,6 +44,7 @@ class _VerifyPhoneState extends State<VerifyPhone> {
             );
 
             Timer(Duration(seconds: 15), () {
+              Navigator.pop(context);
               Navigator.pushReplacement(context,
                   MaterialPageRoute(builder: (context) => HomeScreen()));
             });
@@ -158,6 +159,7 @@ class _VerifyPhoneState extends State<VerifyPhone> {
                                 color: Colors.teal[700]),
                           ));
                       Timer(Duration(seconds: 15), () {
+                        Navigator.pop(context);
                         Navigator.pushReplacement(
                             context,
                             MaterialPageRoute(
