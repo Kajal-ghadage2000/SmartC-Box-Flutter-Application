@@ -128,10 +128,14 @@ class _PhPersonalDataState extends State<PhPersonalData> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       extendBodyBehindAppBar: true,
       appBar: AppBar(
+        iconTheme: IconThemeData(
+          color: Colors.black, //change your color here
+        ),
         backgroundColor: Colors.transparent,
-        elevation: 0,
+        elevation: 0.0,
       ),
       key: scaffoldKey,
       body: SafeArea(
@@ -165,7 +169,7 @@ class _PhPersonalDataState extends State<PhPersonalData> {
                 ),
               ),*/
                 SizedBox(
-                  height: 70.0,
+                  height: 90.0,
                 ),
                 Text('Personal Details',
                   style: GoogleFonts.inter(
