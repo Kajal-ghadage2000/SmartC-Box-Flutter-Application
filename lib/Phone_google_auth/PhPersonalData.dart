@@ -127,6 +127,11 @@ class _PhPersonalDataState extends State<PhPersonalData> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      extendBodyBehindAppBar: true,
+      appBar: AppBar(
+        backgroundColor: Colors.transparent,
+        elevation: 0,
+      ),
       key: scaffoldKey,
       body: SafeArea(
         bottom: false,
