@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_pin_code_fields/flutter_pin_code_fields.dart';
 import 'package:loading/indicator/ball_pulse_indicator.dart';
 import 'package:loading/loading.dart';
-import '../HomeScreen.dart';
+import 'PhPersonalData.dart';
 
 class VerifyPhone extends StatefulWidget {
   String mobile;
@@ -44,9 +44,8 @@ class _VerifyPhoneState extends State<VerifyPhone> {
             );
 
             Timer(Duration(seconds: 15), () {
-              Navigator.pop(context);
               Navigator.pushReplacement(context,
-                  MaterialPageRoute(builder: (context) => HomeScreen()));
+                  MaterialPageRoute(builder: (context) => PhPersonalData()));
             });
           }).catchError((e) {
             print("Exception 1");
@@ -159,11 +158,10 @@ class _VerifyPhoneState extends State<VerifyPhone> {
                                 color: Colors.teal[700]),
                           ));
                       Timer(Duration(seconds: 15), () {
-                        Navigator.pop(context);
                         Navigator.pushReplacement(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => HomeScreen()));
+                                builder: (context) => PhPersonalData()));
                       });
                     }).catchError((e) {
                       print(e);
