@@ -5,6 +5,7 @@ import 'package:flutter_auth_buttons/flutter_auth_buttons.dart';
 import 'VerifyPhone.dart';
 import 'package:toast/toast.dart';
 //import 'first_screen.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'sign_in.dart';
 import '../HomeScreen.dart';
 
@@ -16,6 +17,7 @@ class LoginHome extends StatefulWidget {
 class _LoginHomeState extends State<LoginHome> {
   final _phoneController = TextEditingController();
   String phone_code;
+  final firestoreInstance = Firestore.instance;
 
   @override
   Widget build(BuildContext context) {
@@ -156,9 +158,23 @@ class _LoginHomeState extends State<LoginHome> {
           borderRadius: BorderRadius.circular(30)),
       child: OutlineButton(
       splashColor: Colors.grey,
-      onPressed: () {
+        onPressed: () {
+
         signInWithGoogle().then((result) {
           if (result != null) {
+
+            firestoreInstance.collection("users").add(
+                {
+                  "name" : name,
+                  "email" : email,
+                  "notification" : false,
+                  "phone_num" : null,
+                  "profile": imageUrl,
+                }).then((value){
+              print(value.documentID);
+            });
+
+
             Navigator
                 .of(context)
                 .pushReplacement(new MaterialPageRoute(builder: (BuildContext context) {
