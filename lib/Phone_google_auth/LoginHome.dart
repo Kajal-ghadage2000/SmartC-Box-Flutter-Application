@@ -160,19 +160,27 @@ class _LoginHomeState extends State<LoginHome> {
       splashColor: Colors.grey,
         onPressed: () {
 
-        signInWithGoogle().then((result) {
+        signInWithGoogle().then((result) async{
           if (result != null) {
 
-            firestoreInstance.collection("users").add(
-                {
-                  "name" : name,
-                  "email" : email,
-                  "notification" : false,
-                  "phone_num" : null,
-                  "profile": imageUrl,
-                }).then((value){
-              print(value.documentID);
-            });
+            final QuerySnapshot result = await firestoreInstance.collection("users").where('email', isEqualTo: email).getDocuments();
+            final List <DocumentSnapshot> documents = result.documents;
+            if (documents.length > 0) {
+              //exists
+            }
+            else {
+              //not exists
+              firestoreInstance.collection("users").add(
+                  {
+                    "name" : name,
+                    "email" : email,
+                    "notification" : false,
+                    "phone_num" : null,
+                    "profile": imageUrl,
+                  }).then((value){
+                print(value.documentID);
+              });
+            }
 
 
             Navigator

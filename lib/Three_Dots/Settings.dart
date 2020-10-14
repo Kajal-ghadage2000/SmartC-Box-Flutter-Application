@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:settings_ui/settings_ui.dart';
 import '../Phone_google_auth/sign_in.dart';
-
+import 'package:cloud_firestore/cloud_firestore.dart';
+import '../HomeScreen.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
 class Settings extends StatefulWidget {
   @override
@@ -9,6 +11,10 @@ class Settings extends StatefulWidget {
 }
 
 class _SettingsState extends State<Settings> {
+  final firestoreInstance = Firestore.instance;
+  //final FirebaseAuth _auth = FirebaseAuth.instance;
+  var uid;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -105,6 +111,51 @@ class _SettingsState extends State<Settings> {
                       title: 'Change Gmail',
                       leading: Icon(Icons.email, color: Colors.teal[700]),
                       onTap: () {
+
+                        final FirebaseAuth _auth = FirebaseAuth.instance;
+
+                        var myemail = email;
+                        signOutGoogle();
+
+                        signInWithGoogle().then((result) async{
+                          if (result != null) {
+                            FirebaseUser user = await _auth.currentUser;
+
+                            firestoreInstance.collection("users").getDocuments().then((querySnapshot) {
+                              querySnapshot.documents.forEach((result) {
+                                print(result.data);
+                                if(result['email'] == myemail){
+                                  this.uid = result['uid'];
+                                }
+                              });
+                            });
+
+                            //var firebaseUser = FirebaseAuth.instance.currentUser;
+                            firestoreInstance
+                                .collection("users")
+                                .document(user.uid)
+                                .updateData({
+                                      "name" : name,
+                                      "email" : email,
+                                      "notification" : false,
+                                      "phone_num" : null,
+                                      "profile": imageUrl,
+                            });
+
+                            Navigator.pop(context);
+                            Navigator
+                                .of(context)
+                                .pushReplacement(new MaterialPageRoute(builder: (BuildContext context) {
+                              return new HomeScreen();
+                            }));
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(builder: (context) => Settings()),
+                            );
+
+
+                          }
+                        });
 
                       },
                     ),
