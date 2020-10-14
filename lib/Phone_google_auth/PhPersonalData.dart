@@ -3,6 +3,7 @@ import 'package:email_validator/email_validator.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import '../HomeScreen.dart';
+import 'LoginHome.dart';
 
 class PhPersonalData extends StatefulWidget {
   @override
@@ -73,17 +74,27 @@ class _PhPersonalDataState extends State<PhPersonalData> {
       // and are saved to _email and _password fields.
       _loginCommand();
 
-      await firestoreInstance.collection("users").add(
-          {
-            "name" : _name,
-            "email" : _email,
-            "notification" : false,
-            "phone_num" : null,
-            "profile": null,
-          }).then((value){
-        print(value.documentID);
-      });
+      final QuerySnapshot result = await firestoreInstance.collection("users").where('email', isEqualTo: _email).getDocuments();
+      final List <DocumentSnapshot> documents = result.documents;
+      if (documents.length > 0) {
+        //exists
+      }
+      else {
+        //not exists
+        firestoreInstance.collection("users").add(
+            {
+              "name" : _name,
+              "email" : _email,
+              "notification" : false,
+              "phone_num" : Data.PhoneNum,
+              "profile": null,
+            }).then((value){
+          print(value.documentID);
+        });
+      }
 
+
+      Navigator.pop(mycontext);
       Navigator.pop(mycontext);
       Navigator.pushReplacement(
           mycontext,

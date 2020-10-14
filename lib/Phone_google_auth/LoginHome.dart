@@ -9,6 +9,11 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'sign_in.dart';
 import '../HomeScreen.dart';
 
+class Data
+{
+  static var PhoneNum;
+}
+
 class LoginHome extends StatefulWidget {
   @override
   _LoginHomeState createState() => _LoginHomeState();
@@ -106,6 +111,7 @@ class _LoginHomeState extends State<LoginHome> {
                   onPressed: () {
                     final mobile = "+91" + _phoneController.text.trim();
                     if(mobile.length == 13){
+                      Data.PhoneNum = mobile;
                       Navigator.push(
                           context,
                           MaterialPageRoute(
