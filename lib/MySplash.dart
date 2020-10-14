@@ -4,6 +4,8 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:lottie/lottie.dart';
 import 'dart:async';
 import 'Phone_google_auth/LoginHome.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+import 'HomeScreen.dart';
 
 class MySplash extends StatefulWidget {
   @override
@@ -11,6 +13,19 @@ class MySplash extends StatefulWidget {
 }
 
 class _MySplashState extends State<MySplash> {
+
+  callActivity() async{
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    bool CheckValue = prefs.containsKey('LoginDone');
+    if(CheckValue){
+      return HomeScreen();
+    }
+    else{
+      prefs.setBool('LoginDone', false);
+      return LoginHome();
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
 
@@ -18,7 +33,7 @@ class _MySplashState extends State<MySplash> {
         Duration(seconds: 5),
             () =>
             Navigator.of(context).pushReplacement(MaterialPageRoute(
-                builder: (BuildContext context) => LoginHome())));
+                builder: (BuildContext context) => callActivity())));
 
     return Scaffold(
       body: Stack(

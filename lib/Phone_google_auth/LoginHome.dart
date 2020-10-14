@@ -8,6 +8,7 @@ import 'package:toast/toast.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'sign_in.dart';
 import '../HomeScreen.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class Data
 {
@@ -188,6 +189,8 @@ class _LoginHomeState extends State<LoginHome> {
               });
             }
 
+            SharedPreferences prefs = await SharedPreferences.getInstance();
+            prefs.setBool('LoginDone', true);
 
             Navigator
                 .of(context)

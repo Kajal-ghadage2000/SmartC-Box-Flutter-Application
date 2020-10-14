@@ -4,6 +4,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import '../HomeScreen.dart';
 import 'LoginHome.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class PhPersonalData extends StatefulWidget {
   @override
@@ -93,6 +94,9 @@ class _PhPersonalDataState extends State<PhPersonalData> {
           print(value.documentID);
         });
       }
+
+      SharedPreferences prefs = await SharedPreferences.getInstance();
+      prefs.setBool('boolValue', true);
 
 
       Navigator.pop(mycontext);
