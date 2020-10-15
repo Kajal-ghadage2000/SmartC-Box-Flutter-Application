@@ -14,26 +14,56 @@ class MySplash extends StatefulWidget {
 
 class _MySplashState extends State<MySplash> {
 
-  callActivity() async{
+  /*callActivity(BuildContext context) async{
     SharedPreferences prefs = await SharedPreferences.getInstance();
     bool CheckValue = prefs.containsKey('LoginDone');
     if(CheckValue){
-      return HomeScreen();
+      Navigator
+          .of(context)
+          .pushReplacement(new MaterialPageRoute(builder: (BuildContext context) {
+        return new HomeScreen();
+      }));
     }
     else{
       prefs.setBool('LoginDone', false);
-      return LoginHome();
+      /*Navigator.pop(context);
+      Navigator.pop(context);
+      Navigator.push(
+        context,
+        MaterialPageRoute(builder: (context) => LoginHome()),
+      );*/
+      Navigator
+          .of(context)
+          .pushReplacement(new MaterialPageRoute(builder: (BuildContext context) {
+        return new LoginHome();
+      }));
     }
-  }
+  }*/
 
   @override
   Widget build(BuildContext context) {
 
     Timer(
         Duration(seconds: 5),
-            () =>
-            Navigator.of(context).pushReplacement(MaterialPageRoute(
-                builder: (BuildContext context) => callActivity())));
+            () async{
+              SharedPreferences prefs = await SharedPreferences.getInstance();
+              bool CheckValue = prefs.containsKey('LoginDone');
+              if(CheckValue){
+                Navigator
+                    .of(context)
+                    .pushReplacement(new MaterialPageRoute(builder: (BuildContext context) {
+                  return new HomeScreen();
+                }));
+              }
+              else{
+                prefs.setBool('LoginDone', false);
+                Navigator
+                    .of(context)
+                    .pushReplacement(new MaterialPageRoute(builder: (BuildContext context) {
+                  return new LoginHome();
+                }));
+              }
+            });
 
     return Scaffold(
       body: Stack(

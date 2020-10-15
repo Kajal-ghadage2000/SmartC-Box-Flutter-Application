@@ -5,6 +5,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import '../HomeScreen.dart';
 import 'LoginHome.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'sign_in.dart';
 
 class PhPersonalData extends StatefulWidget {
   @override
@@ -29,6 +30,42 @@ class _PhPersonalDataState extends State<PhPersonalData> {
   @override
   void initState() {
     _isButtonDisabled = true;
+
+    /*signInWithGoogle().then((result) async {
+      if (result != null) {
+        final QuerySnapshot result = await firestoreInstance.collection("users")
+            .where('email', isEqualTo: email)
+            .getDocuments();
+        final List <DocumentSnapshot> documents = result.documents;
+        if (documents.length > 0) {
+          //exists
+        }
+        else {
+          //not exists
+          firestoreInstance.collection("users").add(
+              {
+                "name": name,
+                "email": email,
+                "notification": false,
+                "phone_num": Data.PhoneNum,
+                "profile": imageUrl,
+              }).then((value) {
+            print(value.documentID);
+          });
+        }
+        _isButtonDisabled = false;
+        SharedPreferences prefs = await SharedPreferences.getInstance();
+        prefs.setBool('boolValue', true);
+
+
+        Navigator.pop(mycontext);
+        Navigator.pop(mycontext);
+        Navigator.pushReplacement(
+            mycontext,
+            MaterialPageRoute(
+                builder: (mycontext) => HomeScreen()));
+      }
+    });*/
   }
 
   void _incrementCounter() {
@@ -89,7 +126,7 @@ class _PhPersonalDataState extends State<PhPersonalData> {
               "email" : _email,
               "notification" : false,
               "phone_num" : Data.PhoneNum,
-              "profile": null,
+              "profile": imageUrl,
             }).then((value){
           print(value.documentID);
         });

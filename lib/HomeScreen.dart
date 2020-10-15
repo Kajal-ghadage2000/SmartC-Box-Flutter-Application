@@ -56,7 +56,7 @@ class _HomeScreenState extends State<HomeScreen> with SingleTickerProviderStateM
                 PopupMenuButton<String>(
                   onSelected: handleClick,
                   itemBuilder: (BuildContext context) {
-                    return {' Settings', ' Help'}.map((String choice) {
+                    return {/*' Settings',*/ ' Help'}.map((String choice) {
                       return PopupMenuItem<String>(
                         value: choice,
                         child: Row(
