@@ -31,7 +31,7 @@ class _PhPersonalDataState extends State<PhPersonalData> {
   void initState() {
     _isButtonDisabled = true;
 
-    /*signInWithGoogle().then((result) async {
+    signInWithGoogle().then((result) async {
       if (result != null) {
         final QuerySnapshot result = await firestoreInstance.collection("users")
             .where('email', isEqualTo: email)
@@ -65,7 +65,7 @@ class _PhPersonalDataState extends State<PhPersonalData> {
             MaterialPageRoute(
                 builder: (mycontext) => HomeScreen()));
       }
-    });*/
+    });
   }
 
   void _incrementCounter() {
